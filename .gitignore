@@ -1,0 +1,13 @@
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Node
+frontend/node_modules/
+
+# Env
+.env
+data/*.csv
