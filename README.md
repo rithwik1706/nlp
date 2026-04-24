@@ -1,101 +1,60 @@
-# NLP / Flask Project
+# AI Job Recommender System
+
+This project is an AI-powered job recommendation system that suggests relevant job roles based on user-provided skills. It uses semantic search with transformer-based embeddings combined with skill-based matching to improve recommendation accuracy.
+
+---
 
 ## Overview
 
-* This project is built using Flask and NLP techniques
-* Supports real-time features using Socket.IO
-* Deployed using Gunicorn on Render
-
----
-
-## Live Preview
-
-* Open the deployed app:
-
-  * https://job-recommender-socu.onrender.com
-
----
-
-## Requirements
-
-* Python 3.10+
-* pip
-* Git
-* Render account (for deployment)
-
----
-
-## Required Libraries
-
-Install all dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Or manually:
-
-```bash
-pip install flask flask-socketio gunicorn eventlet
-```
-
----
-
-## Project Structure
-
-```
-nlp/
-│
-├── app.py
-├── requirements.txt
-├── Procfile
-└── README.md
-```
-
----
-
-## Running Locally
-
-```bash
-python app.py
-```
-
----
-
-## Running with Gunicorn
-
-```bash
-gunicorn -k eventlet -w 1 app:app
-```
-
----
-
-## Deployment (Render)
-
-* Connect GitHub repo to Render
-* Build command:
-
-  * `pip install -r requirements.txt`
-* Start command:
-
-  * `gunicorn -k eventlet -w 1 app:app`
-
----
-
-## Important Notes
-
-* Use eventlet for Socket.IO support
-* Do not use Flask development server in production
-* Ensure Procfile is present
+The system takes user input in the form of skills and returns the most relevant job listings by comparing the input with precomputed job embeddings. A hybrid ranking approach is used to balance semantic similarity and exact skill matches.
 
 ---
 
 ## Features
 
-* Real-time communication
-* NLP processing
-* Scalable deployment
+- Semantic search using transformer embeddings
+- Hybrid ranking combining similarity and skill matching
+- Precomputed embeddings for faster inference
+- Full-stack implementation using Flask and React
+- Deployed as a production-ready web application
 
 ---
 
+## Technology Stack
+
+### Backend
+- Python
+- Flask
+- Sentence Transformers (MiniLM)
+- NumPy
+- Scikit-learn
+- Joblib
+
+### Frontend
+- React.js
+- Custom CSS
+
+### Deployment
+- Render
+
+---
+
+## System Workflow
+
+1. User enters skills (e.g., python, aws, docker)
+2. Input is converted into embeddings using a transformer model
+3. The embedding is compared with stored job embeddings
+4. A hybrid score is calculated using:
+   - Semantic similarity
+   - Skill matching score
+5. Top matching jobs are returned
+
+---
+
+
+---
+
+## Live Application
+
+https://nlp-jx7b.onrender.com
 
